@@ -43,7 +43,7 @@ source		SELECT
 			s.user_id = t.user_id;
 
 mappingId	MAPID-a2c438c4bfa24bdbaacc049c1bbe74f5
-target		:AcademicDepartment_{id} a :AcademicDepartment ; :hasName {name} ; :createdAt {created_at} ; :updatedAt {updated_at} ; :hasDescription {description} . 
+target		:Department_{id} a :AcademicDepartment ; :hasName {name} ; :createdAt {created_at} ; :updatedAt {updated_at} ; :hasDescription {description} . 
 source		SELECT
 			t.id,
 			t.created_at,
@@ -258,7 +258,7 @@ source		SELECT
 			JOIN
 			auth_db.users_detail s
 			ON
-			t.user_id = s.id
+			u.user_detail_id = s.id
 			JOIN
 			department_db.teacher_types d
 			ON
@@ -287,7 +287,7 @@ source		SELECT
 			JOIN
 			auth_db.users_detail s
 			ON
-			t.user_id = s.id
+			u.user_detail_id = s.id
 			JOIN
 			department_db.teacher_types d
 			ON
